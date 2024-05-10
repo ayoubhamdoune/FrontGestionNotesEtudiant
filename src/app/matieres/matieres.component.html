@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">List des matieres</div>
+    <div class="panel-body">
+      <button class="btn btn-primary" (click)="onGetMatieres()">Matieres</button>
+
+    </div>
+    <div>
+
+      <table class="table" *ngIf="matieres">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Devoir1</th><th scope="col">Devoir2</th><th scope="col">Devoir3</th><th scope="col">Coeff</th><th scope="col">noteMatiere</th>
+
+        </tr>
+        </thead>  <tbody>
+      <tr *ngFor="let m of matieres._embedded.matieres">
+        <td>{{m.id}}</td>
+        <td>{{m.nom}}</td>
+        <td>{{m.devoir1}}</td>
+        <td>{{m.devoir2}}</td>
+        <td>{{m.devoir3}}</td>
+        <td>{{m.coeff}}</td>
+        <td>{{m.noteMatiere}}</td>
+
+      </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
