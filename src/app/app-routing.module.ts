@@ -5,7 +5,7 @@ import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { NewMatiereComponent } from './new-matiere/new-matiere.component';
 
 const routes: Routes = [ 
-  { path: 'etudiants', component: EtudiantsComponent 
+  { path:"etudiants", component: EtudiantsComponent 
 
   },
   {
@@ -13,11 +13,8 @@ const routes: Routes = [
   },
   {
     path:"new-matiere",component:NewMatiereComponent
-  },
-  {
-
   }
-
+  
 ];
 
 @NgModule({

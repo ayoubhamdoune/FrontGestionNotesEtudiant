@@ -15,7 +15,7 @@ import { NewMatiereComponent } from './new-matiere/new-matiere.component';
     AppComponent,
     EtudiantsComponent,
     MatieresComponent,
-    NewMatiereComponent
+    NewMatiereComponent,
 
   ],
   imports: [
