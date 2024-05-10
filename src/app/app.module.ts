@@ -3,10 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MatieresComponent } from './matieres/matieres.component';
+import { NewMatiereComponent } from './new-matiere/new-matiere.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MatieresComponent,
+    NewMatiereComponent
   ],
   imports: [
     BrowserModule,
