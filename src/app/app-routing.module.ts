@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MatieresComponent } from './matieres/matieres.component';
+import { EtudiantsComponent } from './etudiants/etudiants.component';
 import { NewMatiereComponent } from './new-matiere/new-matiere.component';
 
-const routes: Routes = [
+const routes: Routes = [ 
+  { path: 'etudiants', component: EtudiantsComponent 
+
+  },
   {
     path:"matieres",component: MatieresComponent
   },
@@ -13,6 +17,7 @@ const routes: Routes = [
   {
 
   }
+
 ];
 
 @NgModule({
