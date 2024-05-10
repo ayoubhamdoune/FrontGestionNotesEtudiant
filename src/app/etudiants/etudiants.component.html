@@ -1,1 +1,30 @@
-<p>etudiants works!</p>
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">List des etudiants</div>
+    <div class="panel-body">
+      <button class="btn btn-primary" (click)="onGetEtudiants()">Etudiants</button>
+
+    </div>
+    <div>
+
+      <table class="table" *ngIf="etudiants">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Prénom</th><th scope="col">Email</th><th scope="col">Niseau</th><th scope="col">Class</th>
+
+        </tr>
+        </thead>  <tbody>
+        <tr *ngFor="let e of etudiants._embedded.etudiants">
+          <td>{{e.id}}</td>
+          <td>{{e.firstName}}</td>
+          <td>{{e.lastName}}</td>
+          <td>{{e.email}}</td>
+          <td>{{e.niveau}}</td>
+          <td>{{e.classe}}</td>
+
+        </tr>
+      </tbody>
+      </table>
+    </div>
+  </div>
+</div>
