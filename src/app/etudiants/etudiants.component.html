@@ -25,6 +25,11 @@
         </tr>
       </tbody>
       </table>
+      <ul class="nav nav-pills nav-center ">
+        <li class="nav-item clickable"   *ngFor="let p of pages; let i=index">
+          <a   class="nav-link " [ngClass]="i==currentPage?'active':''" (click)="onPageEtudiant(i)">{{i}}</a>
+        </li>
+      </ul>
     </div>
   </div>
 </div>

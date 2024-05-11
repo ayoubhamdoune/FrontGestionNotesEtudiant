@@ -12,6 +12,7 @@ export class EtudiantsComponent implements OnInit{
   public size:number=10;
   public currentPage:number=0;
   public totalPages:number=0;
+  public pages: Array<number> | undefined;
 
 
   constructor(private gestionService:GestionService) {
@@ -25,9 +26,15 @@ export class EtudiantsComponent implements OnInit{
       .subscribe(data=>{
         this.etudiants=data;
         this.totalPages=data["page"].totalPages;
+        this.pages=new Array<number>(this.totalPages);
       },error => {
         console.log(error);
       });
 
+  }
+
+  onPageEtudiant(i: number) {
+    this.currentPage=i;
+this.onGetEtudiants();
   }
 }
