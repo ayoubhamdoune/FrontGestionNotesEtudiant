@@ -7,16 +7,19 @@ import {Observable} from "rxjs";
   providedIn: 'root'
 })
 export class GestionService {
-  public host:string="http://localhost:8080";
+  public host: string = "http://localhost:8080";
 
-  constructor(private httpClient:HttpClient) { }
+  constructor(private httpClient: HttpClient) {
+  }
 
-  public getEtudiant(page:number,size:number):Observable<any>{
-    return this.httpClient.get(this.host+"/etudiants?page="+page+"&size="+size);
+  public getEtudiant(page: number, size: number): Observable<any> {
+    return this.httpClient.get(this.host + "/etudiants?page=" + page + "&size=" + size);
   }
-  public getMatiere(){
-    return this.httpClient.get("http://localhost:8080/matieres");
-  }
+
+  public getMatiere(page: number, size: number): Observable<any> {
+      return this.httpClient.get(this.host + "/matieres?page=" + page + "&size=" + size);
+    }
+
 
 
 }
