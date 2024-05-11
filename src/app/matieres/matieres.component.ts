@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
+import {GestionService} from "../services/gestion.service";
 
 @Component({
   selector: 'app-matieres',
@@ -8,7 +9,7 @@ import {HttpClient, HttpClientModule} from "@angular/common/http";
 })
 export class MatieresComponent implements OnInit{
   public matieres:any;
-  constructor(private httpClient:HttpClient) {
+  constructor(private gestionService:GestionService) {
   }
   ngOnInit() {
 
@@ -16,7 +17,7 @@ export class MatieresComponent implements OnInit{
 
   onGetMatieres() {
 
-    this.httpClient.get("http://localhost:8080/matieres")
+    this.gestionService.getMatiere()
       .subscribe(data=>{
         this.matieres=data;
       },error => {
