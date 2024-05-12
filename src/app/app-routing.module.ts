@@ -3,9 +3,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatieresComponent } from './matieres/matieres.component';
 import { EtudiantsComponent } from './etudiants/etudiants.component';
 import {NewMatiereComponent} from "./new-matiere/new-matiere.component";
+import {LoginComponent} from "./login/login.component";
 
 
 const routes: Routes = [
+  { path:"login", component: LoginComponent
+
+  },
   { path:"etudiants", component: EtudiantsComponent
 
   },
