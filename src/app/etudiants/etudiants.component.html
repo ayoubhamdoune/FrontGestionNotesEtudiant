@@ -2,6 +2,13 @@
   <div class="panel panel-primary">
     <div class="panel-heading">List des etudiants</div>
     <div class="panel-body">
+      <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
+      <div class="form-group">
+        <label>Keyword</label>
+        <input type="text" name="keyword" ngModel>
+        <button type="submit" class="btn btn-primary"> Chercher </button>
+      </div>
+      </form>
       <button class="btn btn-primary" (click)="onGetEtudiants()">Etudiants</button>
 
     </div>
@@ -21,6 +28,7 @@
           <td>{{e.email}}</td>
           <td>{{e.niveau}}</td>
           <td>{{e.classe}}</td>
+          <td><a class="btn btn-danger" (click)="onDeleteEtudiant(e)">Delete</a></td>
 
         </tr>
       </tbody>
