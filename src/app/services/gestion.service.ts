@@ -19,6 +19,9 @@ export class GestionService {
   public getMatiere(page: number, size: number): Observable<any> {
       return this.httpClient.get(this.host + "/matieres?page=" + page + "&size=" + size);
     }
+    public getUser(username:string,password:string):Observable<any>{
+    return this.httpClient.get(this.host + "/admins/search/findByUsernameAndPassword?username="+username+"&password="+ password);
+    }
 
 
 

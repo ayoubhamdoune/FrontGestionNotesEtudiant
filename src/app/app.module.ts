@@ -10,6 +10,11 @@ import { MatieresComponent } from './matieres/matieres.component';
 import { NewMatiereComponent } from './new-matiere/new-matiere.component';
 import {HttpClientModule, provideHttpClient} from "@angular/common/http";
 import { LoginComponent } from './login/login.component';
+import {ReactiveFormsModule} from "@angular/forms";
+import { AdminComponent } from './admin/admin.component';
+import { EtudiantComponent } from './etudiant/etudiant.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NewEtudiantComponent } from './new-etudiant/new-etudiant.component';
 
 
 @NgModule({
@@ -19,12 +24,17 @@ import { LoginComponent } from './login/login.component';
     MatieresComponent,
     NewMatiereComponent,
     LoginComponent,
+    AdminComponent,
+    EtudiantComponent,
+    ProfileComponent,
+    NewEtudiantComponent,
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

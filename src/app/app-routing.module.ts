@@ -4,24 +4,41 @@ import { MatieresComponent } from './matieres/matieres.component';
 import { EtudiantsComponent } from './etudiants/etudiants.component';
 import {NewMatiereComponent} from "./new-matiere/new-matiere.component";
 import {LoginComponent} from "./login/login.component";
+import {AdminComponent} from "./admin/admin.component";
+import {AuthenticationService} from "./services/authentication.service";
+import {AuthenticationGuard} from "./guards/authentication.guard";
+import {ProfileComponent} from "./profile/profile.component";
+import {NewEtudiantComponent} from "./new-etudiant/new-etudiant.component";
 
 
 const routes: Routes = [
-  { path:"login", component: LoginComponent
+  { path:"", component: LoginComponent
 
   },
-  { path:"etudiants", component: EtudiantsComponent
+  { path:"admin", component: AdminComponent, canActivate:[AuthenticationGuard], children:[
+      { path:"etudiants", component: EtudiantsComponent
+
+      },
+      {
+        path:"matieres",component: MatieresComponent
+      },
+      {
+        path:"new-matiere",component:NewMatiereComponent
+      },
+      {
+        path:"new-etudiant",component:NewEtudiantComponent
+      },
+      {
+        path:"profile",component:ProfileComponent
+      },
+    ]
 
   },
-  {
-    path:"matieres",component: MatieresComponent
-  },
-  {
-    path:"new-matiere",component:NewMatiereComponent
-  },
+
+  /*
   {
     path:"",redirectTo:"/etudiants",pathMatch:'full'
-  }
+  }*/
 
 
 ];
