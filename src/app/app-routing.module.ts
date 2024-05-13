@@ -4,6 +4,7 @@ import { MatieresComponent } from './matieres/matieres.component';
 import { EtudiantsComponent } from './etudiants/etudiants.component';
 import {NewMatiereComponent} from "./new-matiere/new-matiere.component";
 import {LoginComponent} from "./login/login.component";
+import {NewEtudiantComponent} from "./new-etudiant/new-etudiant.component";
 
 
 const routes: Routes = [
@@ -18,6 +19,9 @@ const routes: Routes = [
   },
   {
     path:"new-matiere",component:NewMatiereComponent
+  },
+  {
+    path:"new-etudiant",component:NewEtudiantComponent
   },
   {
     path:"",redirectTo:"/etudiants",pathMatch:'full'
