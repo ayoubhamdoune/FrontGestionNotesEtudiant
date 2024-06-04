@@ -1,0 +1,13 @@
+<div class="container">
+<div class="panel panel-default">
+<div class="panel-heading">Edition du Etudiant</div>
+<div class="panel-body" *ngIf="currentEtudiant">
+<form #f="ngForm" (ngSubmit)="onUpdateEtudiant(f.value)">
+<div class="form-group" >
+<label class="control-label">First Name</label>
+<input [class="form-control" type="text" name="designation" ngModel [(ngModel)]="currentEtudiant.firstName">
+</div>
+</form>
+</div>
+</div>
+</div>

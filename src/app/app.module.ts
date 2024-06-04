@@ -15,6 +15,7 @@ import { AdminComponent } from './admin/admin.component';
 import { EtudiantComponent } from './etudiant/etudiant.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NewEtudiantComponent } from './new-etudiant/new-etudiant.component';
+import { EditEtudiantComponent } from './edit-etudiant/edit-etudiant.component';
 
 
 @NgModule({
@@ -28,6 +29,7 @@ import { NewEtudiantComponent } from './new-etudiant/new-etudiant.component';
     EtudiantComponent,
     ProfileComponent,
     NewEtudiantComponent,
+    EditEtudiantComponent,
 
   ],
   imports: [

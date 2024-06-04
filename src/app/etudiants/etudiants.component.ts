@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {HttpClient, HttpClientModule} from "@angular/common/http";
 import {GestionService} from "../services/gestion.service";
 import {error} from "@angular/compiler-cli/src/transformers/util";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-etudiants',
@@ -17,7 +18,7 @@ export class EtudiantsComponent implements OnInit {
   private currentKeyword: string = "";
 
 
-  constructor(private gestionService: GestionService) {
+  constructor(private gestionService: GestionService,private router: Router ) {
   }
 
   ngOnInit() {
@@ -70,5 +71,11 @@ export class EtudiantsComponent implements OnInit {
           })
 
     }
+  }
+
+  onEditEtudiant(e: any) {
+    let url = e._links.self.href;
+    this.router.navigateByUrl("/edit-etudiant/"+btoa(url));
+
   }
 }

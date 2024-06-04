@@ -9,6 +9,7 @@ import {AuthenticationService} from "./services/authentication.service";
 import {AuthenticationGuard} from "./guards/authentication.guard";
 import {ProfileComponent} from "./profile/profile.component";
 import {NewEtudiantComponent} from "./new-etudiant/new-etudiant.component";
+import {EditEtudiantComponent} from "./edit-etudiant/edit-etudiant.component";
 
 
 const routes: Routes = [
@@ -30,6 +31,9 @@ const routes: Routes = [
       },
       {
         path:"profile",component:ProfileComponent
+      },
+      {
+        path:"edit-product/:id",component:EditEtudiantComponent
       },
     ]
 

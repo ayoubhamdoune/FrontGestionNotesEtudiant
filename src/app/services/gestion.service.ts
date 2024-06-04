@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {observableToBeFn} from "rxjs/internal/testing/TestScheduler";
+import {Etudiant} from "../model/etudiant.model";
 
 
 @Injectable({
@@ -9,6 +10,7 @@ import {observableToBeFn} from "rxjs/internal/testing/TestScheduler";
 })
 export class GestionService {
   public host: string = "http://localhost:8080";
+
 
   constructor(private httpClient: HttpClient) {
   }
@@ -32,8 +34,24 @@ export class GestionService {
     return this.httpClient.delete(url);
   }
 
+  public saveResource(data: any): Observable<Etudiant>{
+  // @ts-ignore
+    return this.httpClient.post(this.host+"/etudiants",data)}
+  /*public saveResource(url: any, data: any): Observable<any> {
+    const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
+    return this.httpClient.post(url, data, { headers });
+  }*/
 
-  public saveResource(url: any, data: any): Observable<any>{
-  return this.httpClient.post(url,data)}
+  public getResource(url: any) : Observable<Etudiant>{
+    // @ts-ignore
+    return this.httpClient.get<Etudiant>(url);}
+
+  public updateResource(url: string | undefined, data: any) : Observable<Etudiant>{
+    // @ts-ignore
+    return this.httpClient.put(url, data);
+  }
+
+
+
 
 }
