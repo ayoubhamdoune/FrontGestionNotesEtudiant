@@ -17,7 +17,8 @@ export class LoginComponent implements OnInit{
 ngOnInit() {
     this.userFormGroup=this.fb.group({
       username:this.fb.control(""),
-      password:this.fb.control("")
+      password:this.fb.control(""),
+      role:this.fb.control("")
     });
 
 }
@@ -25,11 +26,14 @@ ngOnInit() {
   handleLogin() {
     let username=this.userFormGroup.value.username;
     let password=this.userFormGroup.value.password;
-    this.autService.login(username,password).subscribe({
+    let role=this.userFormGroup.value.role;
+    this.autService.login(username,password,role).subscribe({
       next:(appUser)=>{
        this.autService.authenticateUser(appUser).subscribe({
          next:(data)=>{
-            this.router.navigateByUrl("/admin/etudiants");
+           this.router.navigateByUrl("/admin/etudiants");
+
+
          }
        })
       },

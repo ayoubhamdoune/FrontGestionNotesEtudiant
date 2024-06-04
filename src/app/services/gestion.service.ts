@@ -22,9 +22,14 @@ export class GestionService {
   public getMatiere(page: number, size: number): Observable<any> {
       return this.httpClient.get(this.host + "/matieres?page=" + page + "&size=" + size);
     }
-    public getUser(username:string,password:string):Observable<any>{
+    public getAdmin(username:string,password:string):Observable<any>{
     return this.httpClient.get(this.host + "/admins/search/findByUsernameAndPassword?username="+username+"&password="+ password);
     }
+  public getUser(username:string,password:string):Observable<any>{
+    return this.httpClient.get(this.host + "/etudiants/search/findByUsernameAndPassword?username="+username+"&password="+ password);
+  }
+
+
 
   public getEtudiantsByKeyword(mc: string,page: number, size: number):Observable<any>    {
     return this.httpClient.get(this.host + "/etudiants/search/byFirstNamePage?mc=" + mc + "&page=" + page + "&size=" + size);

@@ -13,32 +13,22 @@ constructor(private authService:AuthenticationService, private router:Router) {
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    let authenticated=this.authService.isAuthenticated()
+    let authenticated=this.authService.isAuthenticated();
 
-    if (authenticated === false && this.router.getCurrentNavigation()?.finalUrl?.toString().includes("admin")) {
+    if (authenticated == false ) {
 this.router.navigateByUrl("");
       alert("merci d'authentifier");
 
 
-      return false;
-
-    }else {
-
-      return true;
-
-    }
-    if (authenticated === false && this.router.getCurrentNavigation()?.finalUrl?.toString().includes("etudiant")) {
-      this.router.navigateByUrl("");
-      alert("merci d'authentifier");
-
 
       return false;
 
     }else {
 
-      return true;
 
+      return true;
     }
+
 
   }
 }

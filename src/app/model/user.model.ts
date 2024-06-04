@@ -2,7 +2,7 @@ export interface AppUser{
 
   username:string;
   password:string;
-  roles:String[];
+  role:String[];
   firstName:string;
   lastName: string;
 
