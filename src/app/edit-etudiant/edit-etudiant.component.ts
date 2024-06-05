@@ -34,19 +34,23 @@ export class EditEtudiantComponent {
   }
 
   onUpdateEtudiant(value: any) {
-    console.log('Updated values:', value); // Pour débogage
-    if (this.url) {
-      this.gestionService.updateResource(this.url, value)
+    console.log('Form values:', value); // Pour débogage
+    if (this.url && this.currentEtudiant) {
+      const updatedEtudiant = { ...this.currentEtudiant, ...value };
+      console.log('Updated Etudiant:', updatedEtudiant); // Pour débogage
+
+      this.gestionService.updateResource(this.url, updatedEtudiant)
         .subscribe(
           data => {
-            alert("Mise à jour effectuée avec succès");
-            this.router.navigateByUrl("/admin/etudiants");
+            alert('Mise à jour effectuée avec succès');
+            this.router.navigateByUrl('/admin/etudiants');
           },
           error => {
             console.log(error);
-          });
+          }
+        );
     } else {
-      console.error('URL is undefined');
+      console.error('URL or currentEtudiant is undefined');
     }
   }
 }
