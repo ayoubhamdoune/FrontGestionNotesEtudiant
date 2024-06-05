@@ -75,7 +75,7 @@ export class EtudiantsComponent implements OnInit {
 
   onEditEtudiant(e: any) {
     let url = e._links.self.href;
-    this.router.navigateByUrl("/edit-etudiant/"+btoa(url));
+    this.router.navigateByUrl("/admin/edit-etudiant/" + btoa(url));
 
   }
 }

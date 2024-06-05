@@ -32,17 +32,17 @@ const routes: Routes = [
       {
         path:"profile",component:ProfileComponent
       },
+
       {
-        path:"edit-product/:id",component:EditEtudiantComponent
+        path:"",redirectTo:"/etudiants",pathMatch:'full'
+      },
+      {
+        path:"edit-etudiant/:id",component:EditEtudiantComponent
       },
     ]
 
   },
 
-  /*
-  {
-    path:"",redirectTo:"/etudiants",pathMatch:'full'
-  }*/
 
 
 ];

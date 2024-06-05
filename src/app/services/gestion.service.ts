@@ -46,15 +46,28 @@ export class GestionService {
     const headers = new HttpHeaders({ 'Content-Type': 'application/json' });
     return this.httpClient.post(url, data, { headers });
   }*/
+  public getResource(url: string): Observable<Etudiant> {
+    if (!url) {
+      throw new Error('URL is undefined');
+    }
+    return this.httpClient.get<Etudiant>(url);
+  }
 
-  public getResource(url: any) : Observable<Etudiant>{
-    // @ts-ignore
+  public updateResource(url: string, data: any): Observable<Etudiant> {
+    if (!url) {
+      throw new Error('URL is undefined');
+    }
+    return this.httpClient.put<Etudiant>(url, data);
+  }
+
+
+  /*public getResource(url: any) : Observable<Etudiant>{
     return this.httpClient.get<Etudiant>(url);}
 
   public updateResource(url: string | undefined, data: any) : Observable<Etudiant>{
     // @ts-ignore
     return this.httpClient.put(url, data);
-  }
+  }*/
 
 
 
