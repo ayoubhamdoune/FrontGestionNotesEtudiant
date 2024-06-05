@@ -10,9 +10,11 @@ import {AuthenticationGuard} from "./guards/authentication.guard";
 import {ProfileComponent} from "./profile/profile.component";
 import {NewEtudiantComponent} from "./new-etudiant/new-etudiant.component";
 import {EditEtudiantComponent} from "./edit-etudiant/edit-etudiant.component";
+import {HomeComponent} from "./home/home.component";
 
 
 const routes: Routes = [
+
   { path:"", component: LoginComponent
 
   },

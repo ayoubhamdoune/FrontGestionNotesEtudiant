@@ -16,6 +16,7 @@ import { EtudiantComponent } from './etudiant/etudiant.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NewEtudiantComponent } from './new-etudiant/new-etudiant.component';
 import { EditEtudiantComponent } from './edit-etudiant/edit-etudiant.component';
+import { HomeComponent } from './home/home.component';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { EditEtudiantComponent } from './edit-etudiant/edit-etudiant.component';
     ProfileComponent,
     NewEtudiantComponent,
     EditEtudiantComponent,
+    HomeComponent,
 
   ],
   imports: [
