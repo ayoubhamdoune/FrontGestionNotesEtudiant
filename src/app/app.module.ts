@@ -18,6 +18,7 @@ import { NewEtudiantComponent } from './new-etudiant/new-etudiant.component';
 import { EditEtudiantComponent } from './edit-etudiant/edit-etudiant.component';
 import { NotesMatieresEtudComponent } from './notes-matieres-etud/notes-matieres-etud.component';
 import { EditMatiereComponent } from './edit-matiere/edit-matiere.component';
+import {HomeComponent} from "./home/home.component";
 
 
 @NgModule({
@@ -34,6 +35,7 @@ import { EditMatiereComponent } from './edit-matiere/edit-matiere.component';
     EditEtudiantComponent,
     NotesMatieresEtudComponent,
     EditMatiereComponent,
+    HomeComponent,
 
   ],
   imports: [
