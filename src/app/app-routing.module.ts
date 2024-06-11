@@ -10,6 +10,8 @@ import {AuthenticationGuard} from "./guards/authentication.guard";
 import {ProfileComponent} from "./profile/profile.component";
 import {NewEtudiantComponent} from "./new-etudiant/new-etudiant.component";
 import {EditEtudiantComponent} from "./edit-etudiant/edit-etudiant.component";
+import {NotesMatieresEtudComponent} from "./notes-matieres-etud/notes-matieres-etud.component";
+import {EditMatiereComponent} from "./edit-matiere/edit-matiere.component";
 
 
 const routes: Routes = [
@@ -39,6 +41,13 @@ const routes: Routes = [
       {
         path:"edit-etudiant/:id",component:EditEtudiantComponent
       },
+      {
+        path:"edit-matiere/:id",component:EditMatiereComponent
+      },
+      {
+        path:"notes-matieres-etud",component:NotesMatieresEtudComponent
+      },
+
     ]
 
   },

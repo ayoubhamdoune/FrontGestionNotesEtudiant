@@ -1,1 +1,36 @@
-<p>new-matiere works!</p>
+<div class="container">
+  <div class="col-md-9 col-sm-6 col-xs-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">Nouveau Matiere</div>
+      <div class="panel-body" *ngIf="mode==1">
+        <form #f="ngForm" (ngSubmit)="onSaveMatiere(f.value)">
+          <div class="form-group">
+            <label class="control-label">nom</label>
+            <input class="form-control" type="text" name="nom" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label">devoir1</label>
+            <input class="form-control" type="number" name="devoir1" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label">devoir2</label>
+            <input class="form-control" type="number" name="devoir2" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label">devoir3</label>
+            <input class="form-control" type="number" name="devoir3" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label">coeff</label>
+            <input class="form-control" type="number" name="coeff" ngModel required>
+          </div>
+          <div class="form-group">
+            <label class="control-label">id_Etud</label>
+            <input class="form-control" type="number" name="etudiant" ngModel required>
+          </div>
+          <button class="btn btn-success" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

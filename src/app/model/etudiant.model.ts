@@ -1,12 +1,13 @@
-export class Etudiant{
-  public id: number | undefined;
-  public firstName: string | undefined;
-  public lastName:string| undefined;
-  public username:string| undefined;
-  public password:string| undefined;
-  public email:string| undefined;
-  public niveau:string| undefined;
-  public classe:string| undefined;
+import { Matiere } from './matiere.model';
 
-
+export class Etudiant {
+  id: number | undefined;
+  firstName: string | undefined;
+  lastName: string | undefined;
+  username: string | undefined;
+  password: string | undefined;
+  email: string | undefined;
+  niveau: string | undefined;
+  classe: string | undefined;
+  matieres?: Matiere[];  // Liste des matières associées à cet étudiant
 }
