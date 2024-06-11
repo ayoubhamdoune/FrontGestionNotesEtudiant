@@ -31,7 +31,7 @@ ngOnInit() {
       next:(appUser)=>{
        this.autService.authenticateUser(appUser).subscribe({
          next:(data)=>{
-           this.router.navigateByUrl("/admin/etudiants");
+           this.router.navigateByUrl("/admin/home");
 
 
          }

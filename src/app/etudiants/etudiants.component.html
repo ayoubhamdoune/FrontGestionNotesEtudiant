@@ -1,15 +1,16 @@
 <div class="container">
   <div class="panel panel-primary">
-    <div class="panel-heading">List des etudiants</div>
+  <div class="card-body">
+    <div class="panel-heading  h3 text-center card-body" >List des etudiants</div></div>
     <div class="panel-body">
       <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
-      <div class="form-group">
+      <div class="form-group text-end">
         <label>Keyword</label>
         <input type="text" name="keyword" ngModel>
         <button type="submit" class="btn btn-primary"> Chercher </button>
       </div>
       </form>
-      <button class="btn btn-primary" (click)="onGetEtudiants()">Etudiants</button>
+      <!--   <button class="btn btn-primary" (click)="onGetEtudiants()">Etudiants</button> -->
 
     </div>
     <div>

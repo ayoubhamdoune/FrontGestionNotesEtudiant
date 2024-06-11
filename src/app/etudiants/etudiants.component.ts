@@ -22,7 +22,7 @@ export class EtudiantsComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    this.onGetEtudiants();
   }
 
   onGetEtudiants() {

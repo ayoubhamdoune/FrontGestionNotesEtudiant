@@ -1,13 +1,15 @@
 <div class="container">
   <div class="panel panel-primary">
-    <div class="panel-heading">List des matieres</div>
+    <div class="card-body">
+      <div class="panel-heading  h3 text-center card-body" >List des matieres</div></div>
+
     <div class="panel-body">
-      <button class="btn btn-primary" (click)="onGetMatieres()">Matieres</button>
+     <!--  <button class="btn btn-primary" (click)="onGetMatieres()">Matieres</button>-->
 
     </div>
     <div>
 
-      <table class="table table-striped" *ngIf="matieres">
+      <table class="table table-striped" *ngIf="matieres ">
         <thead class="thead-dark">
         <tr>
           <th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Devoir1</th><th scope="col">Devoir2</th><th scope="col">Devoir3</th><th scope="col">Coeff</th><th scope="col">noteMatiere</th>
@@ -23,14 +25,19 @@
         <td>{{m.coeff}}</td>
         <td>{{m.noteMatiere}}</td>
 
+
+
       </tr>
       </tbody>
       </table>
+
       <ul class="nav nav-pills nav-center ">
         <li class="nav-item clickable" *ngFor="let m of pages; let i=index">
           <a class="nav-link " [ngClass]="i==currentPage?'active':''" (click)="onPageMatiere(i)">{{i}}</a>
         </li>
       </ul>
     </div>
+    <button class="btn btn-primary  text-center" (click)="calculerBulletin()">Calculer Votre bulletin</button>
+     <h3 class="h3 text-center">{{bulletin}}</h3>
   </div>
 </div>
