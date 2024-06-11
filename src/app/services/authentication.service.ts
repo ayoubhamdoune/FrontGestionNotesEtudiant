@@ -3,6 +3,7 @@ import {AppUser} from "../model/user.model";
 import {Observable, of, throwError} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {GestionService} from "./gestion.service";
+import {Router} from "@angular/router";
 
 @Injectable({
   providedIn: 'root'
@@ -13,7 +14,7 @@ export class AuthenticationService {
   authenticatedUser:AppUser | undefined ;
   appUser:any;
 
-  constructor(private gestionService:GestionService) {
+  constructor(private gestionService:GestionService,private router:Router) {
 
   }
   public login(username:string,password:string,role:string):Observable<AppUser>{
@@ -26,6 +27,7 @@ export class AuthenticationService {
         },error => {
         console.log(error);
         alert("username or password is not correct");
+        this.router.navigateByUrl("");
       });
      return of(this.appUser);
     }else if(role=="etudiant"){
@@ -35,9 +37,10 @@ export class AuthenticationService {
         },error => {
           console.log(error);
           alert("username or password is not correct");
+          this.router.navigateByUrl("");
         });
       return of(this.appUser);
-    }else{ this.appUser=null;return of(this.appUser);}
+    }else{this.router.navigateByUrl(""); this.appUser=null;return of(this.appUser);}
   }
   public authenticateUser(appUser:AppUser):Observable<boolean>{
  this.authenticatedUser=appUser;
