@@ -42,9 +42,9 @@ export class AuthenticationService {
       return of(this.appUser);
     }else{this.router.navigateByUrl(""); this.appUser=null;return of(this.appUser);}
   }
-  public authenticateUser(appUser:AppUser):Observable<boolean>{
+  public authenticateUser(appUser:AppUser,role:any):Observable<boolean>{
  this.authenticatedUser=appUser;
- localStorage.setItem("authUser",JSON.stringify({username:appUser.username,role:appUser.role,jwt:"JWT_TOKEN"}))
+ localStorage.setItem("authUser",JSON.stringify({username:appUser.username,role:role,jwt:"JWT_TOKEN"}))
   return of(true);
   }
   public hasRole(role:string):boolean{

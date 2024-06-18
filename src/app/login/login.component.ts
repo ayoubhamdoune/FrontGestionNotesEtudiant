@@ -29,7 +29,7 @@ ngOnInit() {
     let role=this.userFormGroup.value.role;
     this.autService.login(username,password,role).subscribe({
       next:(appUser)=>{
-       this.autService.authenticateUser(appUser).subscribe({
+       this.autService.authenticateUser(appUser,role).subscribe({
          next:(data)=>{
            this.router.navigateByUrl("/admin/home");
 
