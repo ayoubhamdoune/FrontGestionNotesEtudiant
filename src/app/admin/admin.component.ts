@@ -12,30 +12,37 @@ export class AdminComponent {
    // Récupération de l'objet JSON sous forme de chaîne
 role:any;
 isAdmin:boolean | undefined;
+isUser:boolean | undefined;
 
- 
+
   constructor(public authService:AuthenticationService,private router:Router) {
   }
   ngOnInit(){
-  
+
     let authUserString = localStorage.getItem('authUser');
 
     // Parsing de la chaîne JSON en objet
     let authUser = authUserString ? JSON.parse(authUserString) : null;
-    
+
     // Accès à la propriété 'role' de l'objet
     this.role = authUser ? authUser.role : null;
-    console.log(this.role); 
+    console.log(this.role);
      // Devrait afficher 'etudiant'
      if(this.role=='admin'){
           this.isAdmin=true;
      }else{
       this.isAdmin=false;
      }
+     if(this.role=='etudiant'){
+      this.isUser=true;
+      }else{
+      this.isUser=false;
+      }
      console.log(this.isAdmin);
-    
+     console.log(this.isUser);
+
   }
-    
+
   handleLogout() {
      this.authService.logout().subscribe({
        next:(data)=>{

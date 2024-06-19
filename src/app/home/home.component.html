@@ -15,9 +15,10 @@
                 <div class="card">
                     <div class="d-flex justify-content-between" >
                         <div>
-                            <div class="text-muted">Matiers</div>
-                            <div class="value">36,254</div>
-                            <div class="text-success change">+ 5.27% Since last month</div>
+                            <div class="text-muted">LES MATIÈRE</div>
+                            <div class="value">254</div>
+                            <div class="text-success change"> matier
+                            </div>
                         </div>
                         <div class="icon">
                             <img src="../../assets/matieres.png" alt="Customers Logo">
@@ -30,8 +31,8 @@
                     <div class="d-flex justify-content-between">
                         <div>
                             <div class="text-muted">vos collègues</div>
-                            <div class="value">5,543</div>
-                            <div class="text-danger change">- 1.08% Since last month</div>
+                            <div class="value">543</div>
+                            <div class="text-danger change">etudiant</div>
                         </div>
                         <div class="icon">
                             <img src="../../assets/etudiants.png" alt="Customers Logo">
@@ -43,9 +44,9 @@
                 <div class="card">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <div class="text-muted">professeur</div>
-                            <div class="value">$6,254</div>
-                            <div class="text-danger change">- 7.00% Since last month</div>
+                            <div class="text-muted">LES PROFESSEURS</div>
+                            <div class="value">254</div>
+                            <div class="text-danger change">professeur</div>
                         </div>
                         <div class="icon">
                             <img src="../../assets/profs.png" alt="Customers Logo">
@@ -57,9 +58,9 @@
                 <div class="card">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <div class="text-muted">les filières</div>
-                            <div class="value">+ 30.56%</div>
-                            <div class="text-success change">+ 4.87% Since last month</div>
+                            <div class="text-muted">LES FILIÈRES</div>
+                            <div class="value">30</div>
+                            <div class="text-success change">filière</div>
                         </div>
                         <div class="icon">
                             <img src="../../assets/filieres.png" alt="Customers Logo">
@@ -73,20 +74,41 @@
     <div class="back panel-body text-center" style="height:325px;">
         <div class="container ">
             <div class="row  text-center" style="margin-left: 250px;height:300px;">
-                <button  routerLink="/admin/etudiants"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                <button *ngIf="isUser" routerLink="/admin/etudiants"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="margin-top: 10px;margin-left: 80px;">LES NOTES</h3>
+
+                </button>
+                <button *ngIf="isUser" routerLink="/admin/etudiants"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="margin-left: 10px;">LES INFORMATIONS PERSONNELLES</h3>
+
+                </button>
+                <button *ngIf="isUser" routerLink="/admin/etudiants"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="margin-top: 10px;margin-left: 10px;">MOYENNE GENERALE</h3>
+
+                </button>
+                <button *ngIf="isUser" routerLink="/admin/etudiants"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="margin-top: 10px;margin-left: 40px;">L'ORIENTATION</h3>
+
+                </button>
+
+
+
+
+
+                <button *ngIf="isAdmin" routerLink="/admin/etudiants"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
                     <h3 style="margin-top: 10px;margin-left: 10px;">LIST DES ETUDIANTS</h3>
 
                 </button>
-                <button  routerLink="/admin/matieres" class="col-md-4 card  justify-content-between"  style="height: 100px;text-align: center;" >
-                    <h3 style="margin-top: 10px;margin-left: 10px;" >LIST DES MATIERES</h3>
+                <button *ngIf="isAdmin" routerLink="/admin/matieres" class="col-md-4 card  justify-content-between"  style="height: 100px;text-align: center;" >
+                    <h3 style="margin-top: 10px;margin-left: 10px;" >LES NOTES</h3>
 
                </button>
-                <button  routerLink="/admin/new-matiere" class="col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
+                <button *ngIf="isAdmin" routerLink="/admin/new-matiere" class="col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
                     <h3 style="margin-left: 5px;" >AJOUTER UNE MATIÈRE</h3>
 
 
             </button>
-            <button  routerLink="/admin/new-etudiant" class="col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
+            <button *ngIf="isAdmin" routerLink="/admin/new-etudiant" class="col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
                 <h3  style="margin-left: 5px;">AJOUTER UN ÉTUDIANT</h3>
 
 

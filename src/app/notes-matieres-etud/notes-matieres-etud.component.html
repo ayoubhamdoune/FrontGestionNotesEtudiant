@@ -1,10 +1,11 @@
 <div class="container">
   <div class="panel panel-default">
-    <div class="panel-heading">Tableau des Matières et Étudiants</div>
+    <div class="card-body">
+      <div class="panel-heading  h3 text-center card-body" >Tableau des Matières et Étudiants</div></div>
     <div class="panel-body">
 
       <form #f="ngForm" (ngSubmit)="onChercher(f.value)">
-        <div class="form-group">
+        <div class="form-group text-end">
           <label>Keyword</label>
           <input type="text" name="keyword" ngModel>
           <button type="submit" class="btn btn-primary"> Chercher </button>

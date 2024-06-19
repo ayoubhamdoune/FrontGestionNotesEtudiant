@@ -24,20 +24,27 @@ export class AuthenticationService {
     this.gestionService.getAdmin(username,password)
       .subscribe(data=>{
         this.appUser=data;
+
+       // if(data!){ this.router.navigateByUrl("");}
         },error => {
+
+          this.router.navigateByUrl("");
         console.log(error);
         alert("username or password is not correct");
-        this.router.navigateByUrl("");
+
       });
      return of(this.appUser);
     }else if(role=="etudiant"){
       this.gestionService.getUser(username,password)
         .subscribe(data=>{
           this.appUser=data;
+
+         // if(data!){ this.router.navigateByUrl("");}
         },error => {
+
           console.log(error);
           alert("username or password is not correct");
-          this.router.navigateByUrl("");
+
         });
       return of(this.appUser);
     }else{this.router.navigateByUrl(""); this.appUser=null;return of(this.appUser);}

@@ -5,6 +5,8 @@ export interface AppUser{
   role:String[];
   firstName:string;
   lastName: string;
+  niveau: string | undefined;
+  classe: string | undefined;
 
   email: string;
   _links: {

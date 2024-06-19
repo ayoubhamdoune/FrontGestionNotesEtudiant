@@ -26,25 +26,25 @@
         <li class="nav-item">
           <a class="nav-link " style="color: #f8f8f8;" routerLink="/admin/home">Home</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngif="isAdmin">
           <a class="nav-link" style="color: #f8f8f8;" routerLink="/admin/etudiants">Etudiants</a>
         </li>
-        <li  class="nav-item">
+        <li  class="nav-item" *ngif="isUser">
           <a class="nav-link" style="color: #f8f8f8;" routerLink="/admin/matieres">Matieres</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngif="isAdmin">
           <a class="nav-link" routerLink="/admin/notes-matieres-etud">Les Notes des etudiants</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngif="isUser">
           <a class="nav-link" style="color: #f8f8f8;" routerLink="/admin/orientation">Orientation</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngif="isUser">
           <a class="nav-link" style="color: #f8f8f8;" routerLink="/admin/orientation-generale">Orientation Générale </a>
         </li>
-        <li  class="nav-item">
+        <li  class="nav-item" *ngif="isAdmin">
           <a class="nav-link" style="color: #f8f8f8;" routerLink="/admin/new-matiere">Ajouter matiere</a>
         </li>
-        <li class="nav-item">
+        <li class="nav-item" *ngif="isAdmin">
           <a class="nav-link" style="color: #f8f8f8;" routerLink="/admin/new-etudiant">Ajouter etudiant</a>
         </li>
         <li class="top-3 right-4 end-0 position-fixed br-5 " style="margin-right: 40px">
