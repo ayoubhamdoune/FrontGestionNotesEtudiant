@@ -13,6 +13,8 @@ import {EditEtudiantComponent} from "./edit-etudiant/edit-etudiant.component";
 import {NotesMatieresEtudComponent} from "./notes-matieres-etud/notes-matieres-etud.component";
 import {EditMatiereComponent} from "./edit-matiere/edit-matiere.component";
 import {HomeComponent} from "./home/home.component";
+import {OrientationComponent} from "./orientation/orientation.component";
+import {OrientationGeneraleComponent} from "./orientation-generale/orientation-generale.component";
 
 
 const routes: Routes = [
@@ -39,6 +41,13 @@ const routes: Routes = [
       {
         path:"profile",component:ProfileComponent
       },
+      {
+        path:"orientation",component:OrientationComponent
+      },
+      {
+        path:"orientation-generale",component:OrientationGeneraleComponent
+      },
+
 
       {
         path:"",redirectTo:"/etudiants",pathMatch:'full'
