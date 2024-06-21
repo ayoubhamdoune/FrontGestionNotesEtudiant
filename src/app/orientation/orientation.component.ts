@@ -7,13 +7,16 @@ import { Router } from '@angular/router';
   styleUrls: ['./orientation.component.css']
 })
 export class OrientationComponent {
+  showParagraph: boolean = false;
 
   constructor(private router: Router) { }
+
 
   onMonOrientationClick(): void {
     // Logique pour "Mon orientation"
     console.log('Mon orientation button clicked');
-    // Rediriger ou effectuer une autre action
+    // Afficher le paragraphe
+    this.showParagraph = true;
   }
 
   onOrientationGeneralClick(): void {
