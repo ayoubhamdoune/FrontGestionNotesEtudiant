@@ -13,10 +13,13 @@ export class MatieresComponent implements OnInit{
 
   public matieres:any;
   public somme:number=0;
+  public sommeCoeff:number=0;
   public size:number=10;
   public currentPage:number=0;
   public totalPages:number=0;
+  
   public pages: Array<number> | undefined;
+ 
   public bulletin:any;
   public inis:number=0;
 
@@ -53,13 +56,14 @@ this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="
   }
   calculerBulletin() {
     for (let mn of this.matieres._embedded.matieres) {
-      this.somme= this.somme +((mn.noteMatiere));
+      this.somme= this.somme +((mn.noteMatiere)*(mn.coeff));
+      this.sommeCoeff=this.sommeCoeff+(mn.coeff);
       console.log(mn.noteMatiere +"hh"+ mn.coeff +"hh"+ mn.coeff*mn.noteMatiere);
       this.inis=this.inis+1;
 
     }
 
-    this.bulletin=(this.somme/this.inis);
+    this.bulletin=(this.somme)/this.sommeCoeff;
 
     }
 
