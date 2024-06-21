@@ -56,8 +56,10 @@ this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="
   }
   calculerBulletin() {
     for (let mn of this.matieres._embedded.matieres) {
+      console.log(mn.nom);
       this.somme= this.somme +((mn.noteMatiere)*(mn.coeff));
       this.sommeCoeff=this.sommeCoeff+(mn.coeff);
+     
       console.log(mn.noteMatiere +"hh"+ mn.coeff +"hh"+ mn.coeff*mn.noteMatiere);
       this.inis=this.inis+1;
 
@@ -65,7 +67,10 @@ this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="
 
     this.bulletin=(this.somme)/this.sommeCoeff;
 
+
+
     }
+
 
   onPageMatiere(i: number) {
   this.currentPage=i;

@@ -1,7 +1,9 @@
-import { HttpClient } from '@angular/common/http';
+
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../services/authentication.service';
+import { GestionService } from '../services/gestion.service';
 
 @Component({
   selector: 'app-orientation',
@@ -15,35 +17,36 @@ export class OrientationComponent {
   public bulletin:any;
   public somme:number=0;
   public inis:number=0;
+  public noteSm:number=0;
+
   
-  constructor(public authService:AuthenticationService,private router:Router,private httpClient: HttpClient) {
+
+  public sommeCoeff:number=0;
+  public size:number=10;
+  public currentPage:number=0;
+  public totalPages:number=0;
+  
+
+
+  constructor(private gestionService:GestionService,public authService:AuthenticationService,private router:Router,private httpClient: HttpClient) {
   }
   ngOnInit() {
-    this.onGetMatieres() ;
+    this.onGetMatieres();
   }
   public authenticatedID=this.authService.authenticatedUser?.id;
 
   onGetMatieres() {
 this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="+this.authenticatedID)
   .subscribe((data)=>{this.matieres=data;});
-
+   console.log(this.matieres._embedded.matieres);
   
   }
-  calculerBulletin() {
-    for (let mn of this.matieres._embedded.matieres) {
-
-      this.somme= this.somme +((mn.noteMatiere)*(mn.coeff));
-      console.log(mn.noteMatiere +"hh"+ mn.coeff +"hh"+ mn.coeff*mn.noteMatiere);
-      this.inis=this.inis+1;
-
-    }
-
-    this.bulletin=(this.somme/this.inis);
-
-    }
+ 
 
 
   onMonOrientationClick(): void {
+
+    this.calculerOrt();
     // Logique pour "Mon orientation"
     console.log('Mon orientation button clicked');
     // Afficher le paragraphe
@@ -54,6 +57,29 @@ this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="
     }
 
   }
+  calculerOrt() {
+    for (let mn of this.matieres._embedded.matieres) {
+console.log(mn.nom);
+      if(mn.nom=='Mathématiques'){
+        console.log(mn.nom,mn.noteMatiere);
+        this.noteSm=this.noteSm + (mn.noteMatiere)*9 ;
+        if(mn.nom=='Physique et Chimie'){
+          this.noteSm=this.noteSm + (mn.noteMatiere)*7 ;
+        }
+        if(mn.nom=='Anglais'){
+          this.noteSm=this.noteSm + (mn.noteMatiere)*5 ;
+        }
+        if(mn.nom=='Français'){
+          this.noteSm=this.noteSm + (mn.noteMatiere)*5 ;
+        }
+      }
+     
+
+    }
+
+
+
+    }
 
   onOrientationGeneralClick(): void {
     // Logique pour "Orientation Générale"
