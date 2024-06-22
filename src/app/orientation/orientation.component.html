@@ -1,7 +1,7 @@
 <div class="container">
   <div class="button-container">
     <button class="orientation-button" (click)="onMonOrientationClick()">Mon orientation</button>
-    <p *ngIf="showParagraph">La meilleure filière pour vous est {{this.noteSm}}</p>
+    <p *ngIf="showParagraph">{{this.orientationMessage}}</p>
     <button class="orientation-button" (click)="onOrientationGeneralClick()">Orientation Générale</button>
   </div>
 </div>

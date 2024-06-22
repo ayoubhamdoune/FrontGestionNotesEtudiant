@@ -18,6 +18,12 @@ export class OrientationComponent {
   public somme:number=0;
   public inis:number=0;
   public noteSm:number=0;
+  public noteSe:number=0;
+  public noteSt:number=0;
+  public noteEco:number=0;
+  public orientationMessage:string | undefined;
+ 
+
 
   
 
@@ -60,6 +66,8 @@ this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="
   calculerOrt() {
     for (let mn of this.matieres._embedded.matieres) {
 console.log(mn.nom);
+/*---------------------------------------------------- */
+
       if(mn.nom=='Mathématiques'){
         console.log(mn.nom,mn.noteMatiere);
         this.noteSm=this.noteSm + (mn.noteMatiere)*9 ;
@@ -73,9 +81,99 @@ console.log(mn.nom);
           this.noteSm=this.noteSm + (mn.noteMatiere)*5 ;
         }
       }
+/*---------------------------------------------------- */
+      if(mn.nom=='Mathématiques'){
+        console.log(mn.nom,mn.noteMatiere);
+        this.noteSe=this.noteSe + (mn.noteMatiere)*9 ;
+        if(mn.nom=='Physique et Chimie'){
+          this.noteSe=this.noteSe + (mn.noteMatiere)*7 ;
+        }
+        if(mn.nom=='Anglais'){
+          this.noteSe=this.noteSe + (mn.noteMatiere)*5 ;
+        }
+        if(mn.nom=='Français'){
+          this.noteSe=this.noteSe + (mn.noteMatiere)*5 ;
+        }
+      }
+/*---------------------------------------------------- */
+      if(mn.nom=='Mathématiques'){
+        console.log(mn.nom,mn.noteMatiere);
+        this.noteSt=this.noteSt + (mn.noteMatiere)*9 ;
+        if(mn.nom=='Physique et Chimie'){
+          this.noteSt=this.noteSt + (mn.noteMatiere)*7 ;
+        }
+        if(mn.nom=='Anglais'){
+          this.noteSt=this.noteSt + (mn.noteMatiere)*5 ;
+        }
+        if(mn.nom=='Français'){
+          this.noteSt=this.noteSt + (mn.noteMatiere)*5 ;
+        }
+      }
+/*---------------------------------------------------- */
+      if(mn.nom=='Mathématiques'){
+        console.log(mn.nom,mn.noteMatiere);
+        this.noteEco=this.noteEco + (mn.noteMatiere)*9 ;
+        if(mn.nom=='Physique et Chimie'){
+          this.noteEco=this.noteEco + (mn.noteMatiere)*7 ;
+        }
+        if(mn.nom=='Anglais'){
+          this.noteEco=this.noteEco + (mn.noteMatiere)*5 ;
+        }
+        if(mn.nom=='Français'){
+          this.noteEco=this.noteEco + (mn.noteMatiere)*5 ;
+        }
+      }
+
+  
+
+
+
      
 
     }
+    function maxOfFour(a: number, b: number, c: number, d: number): number {
+      let maxVal = a;  // Supposons que 'a' est le maximum au départ
+  
+      if (b > maxVal) {
+          maxVal = b;
+      }
+      if (c > maxVal) {
+          maxVal = c;
+      }
+      if (d > maxVal) {
+          maxVal = d;
+      }
+  
+      return maxVal;
+  }
+  
+  
+  const resultat: number = maxOfFour(this.noteSm, this.noteEco, this.noteSe, this.noteSt);
+  console.log("La valeur maximale est :", resultat);
+
+  
+  switch (resultat) {
+    case this.noteSm:
+      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Science Mathématique.";
+      console.log(this.orientationMessage);
+  
+    case this.noteEco:
+      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Économie.";
+      console.log(this.orientationMessage);
+      break;
+    case this.noteSe:
+      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Sciences Expérimentales.";
+      console.log(this.orientationMessage);
+      break;
+    case this.noteSt:
+      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Sciences Techniques.";
+      console.log(this.orientationMessage);
+      break;
+    default:
+      this.orientationMessage = "Aucune orientation correspondante trouvée.";
+      console.log(this.orientationMessage);
+      break;
+  }
 
 
 
