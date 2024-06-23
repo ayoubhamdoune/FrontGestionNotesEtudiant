@@ -82,13 +82,13 @@ console.log(mn.nom);
         }
       }
 /*---------------------------------------------------- */
-      if(mn.nom=='Mathématiques'){
+      if(mn.nom=='Sciences de la Vie et de la Terre'){
         console.log(mn.nom,mn.noteMatiere);
-        this.noteSe=this.noteSe + (mn.noteMatiere)*9 ;
+        this.noteSe=this.noteSe + (mn.noteMatiere)*7 ;
         if(mn.nom=='Physique et Chimie'){
-          this.noteSe=this.noteSe + (mn.noteMatiere)*7 ;
+          this.noteSe=this.noteSe + (mn.noteMatiere)*9 ;
         }
-        if(mn.nom=='Anglais'){
+        if(mn.nom=='Mathématiques'){
           this.noteSe=this.noteSe + (mn.noteMatiere)*5 ;
         }
         if(mn.nom=='Français'){
@@ -96,13 +96,14 @@ console.log(mn.nom);
         }
       }
 /*---------------------------------------------------- */
-      if(mn.nom=='Mathématiques'){
+
+      if(mn.nom=='Informatique'){
         console.log(mn.nom,mn.noteMatiere);
         this.noteSt=this.noteSt + (mn.noteMatiere)*9 ;
         if(mn.nom=='Physique et Chimie'){
           this.noteSt=this.noteSt + (mn.noteMatiere)*7 ;
         }
-        if(mn.nom=='Anglais'){
+        if(mn.nom=='Mathématiques'){
           this.noteSt=this.noteSt + (mn.noteMatiere)*5 ;
         }
         if(mn.nom=='Français'){
@@ -113,13 +114,13 @@ console.log(mn.nom);
       if(mn.nom=='Mathématiques'){
         console.log(mn.nom,mn.noteMatiere);
         this.noteEco=this.noteEco + (mn.noteMatiere)*9 ;
-        if(mn.nom=='Physique et Chimie'){
+        if(mn.nom=='Français'){
           this.noteEco=this.noteEco + (mn.noteMatiere)*7 ;
         }
         if(mn.nom=='Anglais'){
           this.noteEco=this.noteEco + (mn.noteMatiere)*5 ;
         }
-        if(mn.nom=='Français'){
+        if(mn.nom=='Histoire et Géographie'){
           this.noteEco=this.noteEco + (mn.noteMatiere)*5 ;
         }
       }
