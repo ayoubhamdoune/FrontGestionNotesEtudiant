@@ -22,16 +22,16 @@ export class OrientationComponent {
   public noteSt:number=0;
   public noteEco:number=0;
   public orientationMessage:string | undefined;
- 
 
 
-  
+
+
 
   public sommeCoeff:number=0;
   public size:number=10;
   public currentPage:number=0;
   public totalPages:number=0;
-  
+
 
 
   constructor(private gestionService:GestionService,public authService:AuthenticationService,private router:Router,private httpClient: HttpClient) {
@@ -45,9 +45,9 @@ export class OrientationComponent {
 this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="+this.authenticatedID)
   .subscribe((data)=>{this.matieres=data;});
    console.log(this.matieres._embedded.matieres);
-  
+
   }
- 
+
 
 
   onMonOrientationClick(): void {
@@ -124,16 +124,16 @@ console.log(mn.nom);
         }
       }
 
-  
 
 
 
-     
+
+
 
     }
     function maxOfFour(a: number, b: number, c: number, d: number): number {
       let maxVal = a;  // Supposons que 'a' est le maximum au départ
-  
+
       if (b > maxVal) {
           maxVal = b;
       }
@@ -143,37 +143,37 @@ console.log(mn.nom);
       if (d > maxVal) {
           maxVal = d;
       }
-  
+
       return maxVal;
   }
-  
-  
+
+
   const resultat: number = maxOfFour(this.noteSm, this.noteEco, this.noteSe, this.noteSt);
   console.log("La valeur maximale est :", resultat);
+    let messages: string[] = [];
 
-  
-  switch (resultat) {
-    case this.noteSm:
-      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Science Mathématique.";
-      console.log(this.orientationMessage);
-  
-    case this.noteEco:
-      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Économie.";
-      console.log(this.orientationMessage);
-      break;
-    case this.noteSe:
-      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Sciences Expérimentales.";
-      console.log(this.orientationMessage);
-      break;
-    case this.noteSt:
-      this.orientationMessage = "Félicitations ! Selon nos calculs, Nous vous recommandons vivement de suivre la filière Sciences Techniques.";
-      console.log(this.orientationMessage);
-      break;
-    default:
+    if (this.noteSm === resultat) {
+      messages.push("Science Mathématique");
+    }
+    if (this.noteEco === resultat) {
+      messages.push("Économie");
+    }
+    if (this.noteSe === resultat) {
+      messages.push("Sciences Expérimentales");
+    }
+    if (this.noteSt === resultat) {
+      messages.push("Sciences Techniques");
+    }
+
+    if (messages.length > 0) {
+      this.orientationMessage = "Félicitations ! Selon nos calculs, nous vous recommandons vivement de suivre la ou les filières suivantes : " + messages.join(' et ');
+    } else {
       this.orientationMessage = "Aucune orientation correspondante trouvée.";
-      console.log(this.orientationMessage);
-      break;
-  }
+    }
+
+    console.log(this.orientationMessage);
+
+
 
 
 
