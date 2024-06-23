@@ -66,63 +66,63 @@ this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="
   calculerOrt() {
     for (let mn of this.matieres._embedded.matieres) {
 console.log(mn.nom);
-/*---------------------------------------------------- */
+/*----------------------------------------------------*/
 
       if(mn.nom=='Mathématiques'){
         console.log(mn.nom,mn.noteMatiere);
         this.noteSm=this.noteSm + (mn.noteMatiere)*9 ;
-        if(mn.nom=='Physique et Chimie'){
-          this.noteSm=this.noteSm + (mn.noteMatiere)*7 ;
-        }
-        if(mn.nom=='Anglais'){
-          this.noteSm=this.noteSm + (mn.noteMatiere)*5 ;
-        }
-        if(mn.nom=='Français'){
-          this.noteSm=this.noteSm + (mn.noteMatiere)*5 ;
-        }
       }
-/*---------------------------------------------------- */
+      if(mn.nom=='Physique et Chimie'){
+        this.noteSm=this.noteSm + (mn.noteMatiere)*8 ;
+      }
       if(mn.nom=='Sciences de la Vie et de la Terre'){
-        console.log(mn.nom,mn.noteMatiere);
-        this.noteSe=this.noteSe + (mn.noteMatiere)*7 ;
-        if(mn.nom=='Physique et Chimie'){
-          this.noteSe=this.noteSe + (mn.noteMatiere)*9 ;
-        }
-        if(mn.nom=='Mathématiques'){
-          this.noteSe=this.noteSe + (mn.noteMatiere)*5 ;
-        }
-        if(mn.nom=='Français'){
-          this.noteSe=this.noteSe + (mn.noteMatiere)*5 ;
-        }
+        this.noteSm=this.noteSm + (mn.noteMatiere)*4 ;
       }
-/*---------------------------------------------------- */
-
-      if(mn.nom=='Informatique'){
-        console.log(mn.nom,mn.noteMatiere);
-        this.noteSt=this.noteSt + (mn.noteMatiere)*9 ;
-        if(mn.nom=='Physique et Chimie'){
-          this.noteSt=this.noteSt + (mn.noteMatiere)*7 ;
-        }
-        if(mn.nom=='Mathématiques'){
-          this.noteSt=this.noteSt + (mn.noteMatiere)*5 ;
-        }
-        if(mn.nom=='Français'){
-          this.noteSt=this.noteSt + (mn.noteMatiere)*5 ;
-        }
+      if(mn.nom=='Français'){
+        this.noteSm=this.noteSm + (mn.noteMatiere)*5 ;
       }
 /*---------------------------------------------------- */
       if(mn.nom=='Mathématiques'){
         console.log(mn.nom,mn.noteMatiere);
-        this.noteEco=this.noteEco + (mn.noteMatiere)*9 ;
-        if(mn.nom=='Français'){
-          this.noteEco=this.noteEco + (mn.noteMatiere)*7 ;
-        }
-        if(mn.nom=='Anglais'){
-          this.noteEco=this.noteEco + (mn.noteMatiere)*5 ;
-        }
-        if(mn.nom=='Histoire et Géographie'){
-          this.noteEco=this.noteEco + (mn.noteMatiere)*5 ;
-        }
+        this.noteSe=this.noteSe + (mn.noteMatiere)*7 ;
+      }
+      if(mn.nom=='Sciences de la Vie et de la Terre'){
+        this.noteSe=this.noteSe + (mn.noteMatiere)*7 ;
+      }
+      if(mn.nom=='Physique et Chimie'){
+        this.noteSe=this.noteSe + (mn.noteMatiere)*7 ;
+      }
+      if(mn.nom=='Français'){
+        this.noteSe=this.noteSe + (mn.noteMatiere)*5 ;
+      }
+/*---------------------------------------------------- */
+
+      if(mn.nom=="Sciences de l'ingénieur"){
+        console.log(mn.nom,mn.noteMatiere);
+        this.noteSt=this.noteSt + (mn.noteMatiere)*9 ;
+      }
+      if(mn.nom=='Physique et Chimie'){
+        this.noteSt=this.noteSt + (mn.noteMatiere)*6 ;
+      }
+      if(mn.nom=='Mathématiques'){
+        this.noteSt=this.noteSt + (mn.noteMatiere)*6 ;
+      }
+      if(mn.nom=='Français'){
+        this.noteSt=this.noteSt + (mn.noteMatiere)*5 ;
+      }
+/*---------------------------------------------------- */
+      if(mn.nom=='Mathématiques'){
+        console.log(mn.nom,mn.noteMatiere);
+        this.noteEco=this.noteEco + (mn.noteMatiere)*7 ;
+      }
+      if(mn.nom=='Français'){
+        this.noteEco=this.noteEco + (mn.noteMatiere)*7 ;
+      }
+      if(mn.nom=='Anglais'){
+        this.noteEco=this.noteEco + (mn.noteMatiere)*5 ;
+      }
+      if(mn.nom=='Histoire et Géographie'){
+        this.noteEco=this.noteEco + (mn.noteMatiere)*7 ;
       }
 
 
