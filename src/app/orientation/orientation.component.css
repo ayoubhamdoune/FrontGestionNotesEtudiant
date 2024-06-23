@@ -1,15 +1,19 @@
 .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column; /* Placer les éléments en colonne */
+  justify-content: flex-start; /* Aligner les éléments en haut */
+  align-items: center; /* Centrer horizontalement */
   height: 100vh;
   background-color: #f5f5f5;
+  padding-top: 20px; /* Ajuster l'espace en haut */
 }
 
 .button-container {
   display: flex;
   justify-content: space-between;
   width: 60%; /* Ajustez cette valeur selon la taille de votre écran */
+  max-width: 500px; /* Limite la largeur maximum */
+  gap: 300px; /* Augmentez cette valeur pour agrandir la distance entre les boutons */
 }
 
 .orientation-button {
