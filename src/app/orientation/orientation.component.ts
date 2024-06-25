@@ -21,11 +21,11 @@ export class OrientationComponent {
   public noteSe:number=0;
   public noteSt:number=0;
   public noteEco:number=0;
-  public orientationMessage:string | undefined;
+  public orientationMessage:string ='';
+  public nonOrientationMessage:string ="Aucune orientation correspondante trouvée.";
 
 
-
-
+  
 
   public sommeCoeff:number=0;
   public size:number=10;
@@ -167,7 +167,7 @@ console.log(mn.nom);
     }
 
     if (messages.length > 0) {
-      this.orientationMessage = "Félicitations ! Selon nos calculs, nous vous recommandons vivement de suivre la ou les filières suivantes : " + messages.join(' et ');
+      this.orientationMessage = "Selon nos calculs, nous vous recommandons vivement de suivre la ou les filières suivantes : " + messages.join(' et ');
     } else {
       this.orientationMessage = "Aucune orientation correspondante trouvée.";
     }

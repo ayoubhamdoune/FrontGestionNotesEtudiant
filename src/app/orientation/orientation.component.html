@@ -4,5 +4,19 @@
     <button class="orientation-button" (click)="onOrientationGeneralClick()">Orientation Générale</button>
   </div>
   <br>
-  <h4 *ngIf="showParagraph">{{this.orientationMessage}}</h4>
+  
+
+
+
+  <div *ngIf="showParagraph" class="modal-dialog">
+    <div class="card-body text-center"> <img src="https://img.icons8.com/bubbles/200/000000/trophy.png">
+      <h4 *ngIf="orientationMessage!=='Aucune orientation correspondante trouvée.'">FÉLICITATIONS ! </h4>
+      
+      <h4 >{{this.orientationMessage}}</h4>
+  </div>
+   
+  
+  </div>
+
+
 </div>
