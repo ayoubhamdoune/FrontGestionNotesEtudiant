@@ -9,10 +9,10 @@
  </div>
 
   <div class="panel-body" style="height: 100%;">
-    <div class="container">
+    <div class="container" style="height: 100%;">
         <div class="row">
             <div class="col-md-3">
-                <div class="card">
+                <div class="card ">
                     <div class="d-flex justify-content-between" >
                         <div>
                             <div class="text-muted">LES MATIÈRE</div>
@@ -71,49 +71,98 @@
         </div>
     </div>
 </div>
-    <div class="back panel-body text-center" style="height:325px;">
+
+
+
+    <div class="back panel-body text-center" style="height: 100%; ">
         <div class="container ">
-            <div class="row  text-center" style="margin-left: 250px;height:300px;">
-                <button *ngIf="isUser" routerLink="/admin/matieres"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
-                    <h3 style="margin-top: 10px;margin-left: 80px;">LES NOTES</h3>
+            <div *ngIf="isUser" class="row  text-center row-expand-lg  row-expand-sm row-expand-md row-expand-lg row-expand-xl" style="height:300px;">
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
 
-                </button>
-                <button *ngIf="isUser" routerLink="/admin/profile"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
-                    <h3 style="margin-left: 10px;">LES INFORMATIONS PERSONNELLES</h3>
-
-                </button>
-                <button  *ngIf="isUser" routerLink="/admin/matieres"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
-                    <h3 style="margin-top: 10px;margin-left: 10px;">MOYENNE GENERALE</h3>
-
-                </button>
-                <button *ngIf="isUser" routerLink="/admin/orientation"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
-                    <h3 style="margin-top: 10px;margin-left: 40px;">L'ORIENTATION</h3>
+                <button *ngIf="isUser" routerLink="/admin/matieres"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto; ">LES NOTES</h3>
 
                 </button>
 
-
-
-
-
-                <button *ngIf="isAdmin" routerLink="/admin/etudiants"  class="col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
-                    <h3 style="margin-top: 10px;margin-left: 10px;">LIST DES ETUDIANTS</h3>
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isUser" routerLink="/admin/profile"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h4 style="text-align: center ;margin: auto; text-size-adjust: auto">LES INFORMATIONS PERSONNELLES</h4>
 
                 </button>
-                <button *ngIf="isAdmin" routerLink="/admin/matieres" class="col-md-4 card  justify-content-between"  style="height: 100px;text-align: center;" >
-                    <h3 style="margin-top: 10px;margin-left: 10px;" >LES NOTES</h3>
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+                <button  *ngIf="isUser" routerLink="/admin/matieres"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto; ">MOYENNE GENERALE</h3>
+
+                </button>
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isUser" routerLink="/admin/orientation"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto; ">L'ORIENTATION</h3>
+
+                </button>
+              </div>
+
+              <div class="col-md-3">
+
+
+
+
+              </div>
+            </div>
+              <div *ngIf="isAdmin" class="row  text-center row-expand-lg  row-expand-sm row-expand-md row-expand-lg row-expand-xl" style="height:300px;">
+
+                <div class="col-md-3">
+                </div>
+                <div class="col-md-3">
+                <button *ngIf="isAdmin" routerLink="/admin/etudiants"  class="butt col-md-4 card  justify-content-between " style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto;">LIST DES ETUDIANTS</h3>
+
+                </button>
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isAdmin" routerLink="/admin/notes-matieres-etud" class="butt col-md-4 card  justify-content-between"  style="height: 100px;text-align: center;" >
+                    <h3 style="text-align: center ;margin: auto;" >LES NOTES</h3>
 
                </button>
-                <button *ngIf="isAdmin" routerLink="/admin/new-matiere" class="col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+              </div>
+              <div class="col-md-3">
+                <button *ngIf="isAdmin" routerLink="/admin/new-matiere" class="butt col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
                     <h3 style="margin-left: 5px;" >AJOUTER UNE MATIÈRE</h3>
 
 
             </button>
-            <button *ngIf="isAdmin" routerLink="/admin/new-etudiant" class="col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
+              </div>
+              <div class="col-md-3">
+            <button *ngIf="isAdmin" routerLink="/admin/new-etudiant" class="butt col-md-4 card  justify-content-between" style="height: 100px;text-align: center;" >
                 <h3  style="margin-left: 5px;">AJOUTER UN ÉTUDIANT</h3>
 
 
             </button>
+              </div>
+              <div class="col-md-3">
+
+
+
+
+              </div>
+
             </div>
+
+
+          </div>
         </div>
 
     </div>
+
