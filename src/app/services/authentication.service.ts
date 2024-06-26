@@ -41,7 +41,7 @@ export class AuthenticationService {
 
          // if(data!){ this.router.navigateByUrl("");}
         },error => {
-
+          this.router.navigateByUrl("");
           console.log(error);
           alert("username or password is not correct");
 
