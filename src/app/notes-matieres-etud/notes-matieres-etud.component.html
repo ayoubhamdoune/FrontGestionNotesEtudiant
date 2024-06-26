@@ -49,7 +49,7 @@
                 <td>{{ matiere.devoir2 }}</td>
                 <td>{{ matiere.devoir3 }}</td>
                 <td>{{ matiere.coeff }}</td>
-                <td>{{ matiere.noteMatiere }}</td>
+                <td>{{ matiere.noteMatiere.toFixed(2) }}</td>
                 <td><a class="btn btn-danger" (click)="onDeleteMatiere(matiere)">Delete</a></td>
                 <td><a class="btn btn-success" (click)="onEditMatiere(matiere)">Edit</a></td>
               </tr>
