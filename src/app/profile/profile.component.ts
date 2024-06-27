@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import {AuthenticationGuard} from "../guards/authentication.guard";
 import {AuthenticationService} from "../services/authentication.service";
@@ -8,7 +8,7 @@ import {AuthenticationService} from "../services/authentication.service";
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
-export class ProfileComponent {
+export class ProfileComponent implements OnInit{
 
   role:any;
 isAdmin:boolean | undefined;

@@ -36,6 +36,7 @@ export class NewMatiereComponent {
             this.currentMatiere = res;
             this.mode = 2;
             console.log('Matiere ajoutée avec succès:', res);
+            this.router.navigateByUrl("/admin/notes-matieres-etud");
           },
           (error: any) => {
             console.error("Erreur lors de l'ajout de Matiere:", error);
