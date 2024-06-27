@@ -17,9 +17,9 @@ export class MatieresComponent implements OnInit{
   public size:number=10;
   public currentPage:number=0;
   public totalPages:number=0;
-  
+
   public pages: Array<number> | undefined;
- 
+
   public bulletin:any;
   public inis:number=0;
 
@@ -59,13 +59,13 @@ this.httpClient.get("http://localhost:8080/matieres/search/findByEtudiantId?id="
       console.log(mn.nom);
       this.somme= this.somme +((mn.noteMatiere)*(mn.coeff));
       this.sommeCoeff=this.sommeCoeff+(mn.coeff);
-     
+
       console.log(mn.noteMatiere +"hh"+ mn.coeff +"hh"+ mn.coeff*mn.noteMatiere);
       this.inis=this.inis+1;
 
     }
 
-    this.bulletin=(this.somme)/this.sommeCoeff;
+    this.bulletin=((this.somme)/this.sommeCoeff).toFixed(2);
 
 
 

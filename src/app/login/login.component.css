@@ -3,13 +3,21 @@
   content: "";
   flex: 1;
   height: 1px;
-  background: #ffffff;
+  background: #eee;
 }
-.h-custom {
-  height: calc(100% - 73px);
+
+.vh-100 {
+  height: 100vh;
 }
-@media (max-width: 450px) {
-  .h-custom {
-    height: 100%;
-  }
+
+.flex-grow-1 {
+  flex-grow: 1;
+}
+
+.footer {
+  background-color: #3638D3;
+  color: white;
+  text-align: center;
+  width: 100%;
+  margin-top: auto; /* Pushes footer to the bottom */
 }

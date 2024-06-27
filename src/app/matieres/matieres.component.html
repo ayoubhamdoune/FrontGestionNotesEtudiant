@@ -1,7 +1,7 @@
 <div class="container">
   <div class="panel panel-primary">
     <div class="card-body">
-      <div class="panel-heading  h3 text-center card-body" >List des matieres</div></div>
+      <div class="panel-heading  h3 text-center card-body" >Liste des matieres</div></div>
 
     <div class="panel-body">
      <!--  <button class="btn btn-primary" (click)="onGetMatieres()">Matieres</button>-->
@@ -12,7 +12,7 @@
       <table class="table table-striped" *ngIf="matieres ">
         <thead class="thead-dark">
         <tr>
-          <th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Devoir1</th><th scope="col">Devoir2</th><th scope="col">Devoir3</th><th scope="col">Coeff</th><th scope="col">noteMatiere</th>
+          <th scope="col">ID</th><th scope="col">Nom</th><th scope="col">Devoir1</th><th scope="col">Devoir2</th><th scope="col">Devoir3</th><th scope="col">Coeff</th><th scope="col">Moyenne</th>
 
         </tr>
         </thead>  <tbody>
@@ -37,7 +37,7 @@
         </li>
       </ul>
     </div>
-    <button class="btn btn-primary  text-center" (click)="calculerBulletin()">Calculer Votre bulletin</button>
+    <button class="btn btn-primary  text-center" (click)="calculerBulletin()">Moyenne Générale :</button>
      <h3 class="h3 text-center">{{bulletin}}</h3>
   </div>
 </div>
