@@ -30,8 +30,10 @@
                 <div class="card">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <div class="text-muted">vos collègues</div>
-                            <div class="value">543</div>
+                            <div *ngIf="isUser" class="text-muted">VOS COLLÈGUES</div>
+                            <div *ngIf="isUser" class="value">20</div>
+                          <div *ngIf="isAdmin" class="text-muted">LES ÉLÈVES</div>
+                          <div *ngIf="isAdmin" class="value">120</div>
                             <div class="text-danger change">Élève</div>
                         </div>
                         <div class="icon">
@@ -44,8 +46,10 @@
                 <div class="card">
                     <div class="d-flex justify-content-between">
                         <div>
-                            <div class="text-muted">LES PROFESSEURS</div>
-                            <div class="value">254</div>
+                            <div *ngIf="isAdmin" class="text-muted">LES PROFESSEURS</div>
+                            <div *ngIf="isAdmin" class="value">32</div>
+                          <div *ngIf="isUser" class="text-muted">VOS PROFESSEURS</div>
+                          <div *ngIf="isUser" class="value">12</div>
                             <div class="text-danger change">professeur</div>
                         </div>
                         <div class="icon">
